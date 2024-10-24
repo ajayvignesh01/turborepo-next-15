@@ -1,19 +1,19 @@
-import { FlatCompat } from "@eslint/eslintrc";
-import eslintConfigPrettier from "eslint-config-prettier";
-import reactCompiler from "eslint-plugin-react-compiler";
+import { FlatCompat } from '@eslint/eslintrc'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import reactCompiler from 'eslint-plugin-react-compiler'
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
-});
+})
 
 /** @type {import('eslint').Linter.Config[]} */
 const config = [
   // defaults
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
 
   // typescript-eslint
   {
-    files: ["**/*.ts?(x)"],
+    files: ['**/*.ts?(x)'],
     languageOptions: {
       parserOptions: {
         // project: ['./apps/*/tsconfig.json', './packages/*/tsconfig.json'],
@@ -27,27 +27,27 @@ const config = [
   {
     settings: {
       next: {
-        rootDir: ["./apps/*"],
+        rootDir: ['./apps/*'],
       },
-      "import/resolver": {
+      'import/resolver': {
         typescript: {
-          project: ["./apps/*/tsconfig.json", "./packages/*/tsconfig.json"],
+          project: ['./apps/*/tsconfig.json', './packages/*/tsconfig.json'],
         },
       },
     },
 
     rules: {
-      "@next/next/no-html-link-for-pages": ["error", ["."]],
+      '@next/next/no-html-link-for-pages': ['error', ['.']],
     },
   },
 
   // react-compiler
   {
     plugins: {
-      "react-compiler": reactCompiler,
+      'react-compiler': reactCompiler,
     },
     rules: {
-      "react-compiler/react-compiler": "error",
+      'react-compiler/react-compiler': 'error',
     },
   },
 
@@ -56,14 +56,8 @@ const config = [
 
   // global ignores
   {
-    ignores: [
-      "**/node_modules/",
-      "**/.git/",
-      "**/.next/",
-      "**/dist/",
-      "**/.turbo",
-    ],
+    ignores: ['**/node_modules/', '**/.git/', '**/.next/', '**/dist/', '**/.turbo'],
   },
-];
+]
 
-export default config;
+export default config
