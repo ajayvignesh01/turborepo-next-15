@@ -8,12 +8,19 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "eslint": "^9.13.0",
+    "eslint-config-next": "^15.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-compiler": "^19.0.0-beta-8a03594-20241020",
     "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "turbo": "^2.2.3",
     "typescript": "^5.4.5"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "packageManager": "bun@1.1.31",
   "workspaces": [
